@@ -266,7 +266,7 @@ Keep tokenless servers bound to localhost. The integration exposes architecture 
 
 ### Figma and FigJam (`figma`)
 
-Proxies Figma's official hosted MCP server and exposes the focused FigJam planning workflow: `figma_get_figjam`, `figma_use_figma`, `figma_generate_diagram`, `figma_create_new_file`, `figma_upload_assets`, `figma_get_screenshot`, and `figma_whoami`. The adapter automatically supplies the `figma-use-figjam` skill when calling `figma_use_figma`, so created sections, stickies, connectors, shapes, tables, and code blocks remain native and editable.
+Proxies Figma's official hosted MCP server and exposes every tool it offers under the `figma_` prefix: design-to-code (`figma_get_design_context`, `figma_get_metadata`, `figma_get_variable_defs`, `figma_get_screenshot`), design-system and Code Connect lookups, creating and editing designs, FigJam boards, and Slides (`figma_use_figma`, `figma_generate_figma_design`, `figma_create_new_file`), FigJam diagrams (`figma_get_figjam`, `figma_generate_diagram`), shaders, generative plugins, and `figma_whoami`. The tool list is discovered from Figma at connect time, so new hosted tools appear without a Switchboard release. Load Figma's skills (the `figma-*` MCP resources) before `figma_use_figma` or `figma_get_design_context`, as their descriptions ask; the adapter no longer forces a FigJam skill name onto every `figma_use_figma` call.
 
 Use the web UI at `http://localhost:3847/integrations/figma/setup` to authorize with Figma OAuth. Figma currently limits its hosted MCP server to approved MCP clients and eligible paid-plan seats. Figma rejects dynamic registration under Switchboard's own client name, so this beta compatibility path registers with Figma's approved `Codex` client profile while the MCP session still identifies itself as Switchboard. This may stop working as Figma changes enforcement; catalog approval for Switchboard is the durable solution.
 
@@ -300,7 +300,7 @@ Environment variables override credential values but do not change the durable e
 | Slack MCP (official hosted) | multi-identity `access_token` | configure via `identities` in JSON (see below) |
 | LikeC4 Excalidraw | `base_url` | `LIKEC4_EXCALIDRAW_BASE_URL` |
 | LikeC4 Excalidraw | `mcp_token` | `LIKEC4_EXCALIDRAW_MCP_TOKEN` (optional) |
-| Figma MCP | `mcp_access_token` | `FIGMA_MCP_ACCESS_TOKEN` |
+| Figma MCP | `mcp_access_token`, `mcp_refresh_token`, `mcp_client_id` | `FIGMA_MCP_ACCESS_TOKEN` for the access token; refresh token and client are set by **Sign in with Figma** and rotate automatically |
 | Figma MCP | `base_url` | `FIGMA_MCP_BASE_URL` (optional, default `https://mcp.figma.com`) |
 | Notion MCP | `mcp_access_token` | `NOTION_MCP_ACCESS_TOKEN` |
 | Notion MCP | `base_url` | `NOTION_MCP_BASE_URL` (optional, default `https://mcp.notion.com`; a trailing `/mcp` is accepted) |

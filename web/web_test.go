@@ -1184,6 +1184,7 @@ func TestRemoteOAuthProfiles(t *testing.T) {
 	assert.Equal(t, "Codex", figmaProfile.Options.ClientName)
 	assert.Equal(t, "/mcp", figmaProfile.ResourcePath)
 	assert.Equal(t, "mcp_access_token", figmaProfile.CredentialKey)
+	assert.True(t, figmaProfile.PersistRefresh)
 
 	linearProfile, ok := remoteOAuthProfiles["linear"]
 	require.True(t, ok)

@@ -284,7 +284,7 @@ func TestDefaultConfig(t *testing.T) {
 		"slack":            {"token", "cookie", "token_source"},
 		"slackmcp":         {"base_url"},
 		"likec4excalidraw": {"base_url", "mcp_token"},
-		"figma":            {"mcp_access_token", "base_url", "token_source"},
+		"figma":            {"mcp_access_token", "mcp_refresh_token", "mcp_client_id", "base_url", "token_source"},
 		"notion-mcp":       {"mcp_access_token", "base_url", "token_source"},
 		"metabase":         {"api_key", "url", "mcp_access_token", "mcp_refresh_token", "mcp_client_id", "token_source"},
 		"paperless":        {"token", "url"},

@@ -129,7 +129,7 @@ func FigmaSetup(page layouts.PageData, data FigmaSetupData) templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "</div><p style=\"color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;\">Authorize Figma's hosted MCP server to read FigJam whiteboards, create editable diagrams, and add or update native board content.</p><div id=\"oauth-container\"><button type=\"button\" class=\"btn btn-green\" id=\"oauth-start-btn\" onclick=\"startRemoteMCPOAuth()\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "</div><p style=\"color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;\">Authorize Figma's hosted MCP server to read design files for design-to-code work, inspect variables, components, and Code Connect mappings, take screenshots, and create or edit Figma designs, FigJam boards, and Slides. Figma issues short-lived tokens; Switchboard refreshes them automatically.</p><div id=\"oauth-container\"><button type=\"button\" class=\"btn btn-green\" id=\"oauth-start-btn\" onclick=\"startRemoteMCPOAuth()\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

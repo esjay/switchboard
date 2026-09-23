@@ -345,7 +345,7 @@ func defaultConfig() *mcp.Config {
 			},
 			"figma": {
 				Enabled:     false,
-				Credentials: mcp.Credentials{"mcp_access_token": "", "base_url": "", mcp.CredKeyTokenSource: ""},
+				Credentials: mcp.Credentials{"mcp_access_token": "", "mcp_refresh_token": "", "mcp_client_id": "", "base_url": "", mcp.CredKeyTokenSource: ""},
 			},
 			"notion-mcp": {
 				Enabled:     false,

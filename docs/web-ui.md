@@ -22,7 +22,7 @@
 - **OAuth/Setup pages** (guided credential flows):
   - `GET /integrations/github/setup` — GitHub Device Flow OAuth
   - `GET /integrations/linear/setup` — Linear OAuth (PKCE)
-  - `GET /integrations/figma/setup` — Figma hosted MCP OAuth (PKCE) for FigJam workflows
+  - `GET /integrations/figma/setup` — Figma hosted MCP OAuth (PKCE) for design files, FigJam, and Slides; persists the refresh token
   - `GET /integrations/notion-mcp/setup`: independent Notion hosted MCP OAuth (PKCE). Uses `/api/remote/notion-mcp/oauth/start` and `/api/remote/notion-mcp/oauth/callback`; successful sign-in enables `notion-mcp` and refreshes discovery without changing the existing Notion integration.
   - `GET /integrations/metabase/setup` — Metabase: save the site URL, then hosted MCP OAuth (PKCE via `/api/remote/metabase/oauth/start` + callback, persists the refresh token) or an API key (`POST /api/metabase/save-credentials`). Probes the instance's public `mcp-enabled?` setting and only offers OAuth when the Admin > AI > MCP toggle is on; the API key stays as the fallback.
   - `GET /integrations/sentry/setup` — Sentry Device Flow OAuth

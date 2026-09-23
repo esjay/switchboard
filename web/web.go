@@ -1627,10 +1627,11 @@ var remoteOAuthProfiles = map[string]remoteOAuthProfile{
 		ClearCredentialKey: "api_key",
 	},
 	"figma": {
-		CallbackPath:  "/callback",
-		ResourcePath:  "/mcp",
-		Options:       remotemcp.OAuthOptions{Scope: "mcp:connect", ClientName: "Codex"},
-		CredentialKey: "mcp_access_token",
+		CallbackPath:   "/callback",
+		ResourcePath:   "/mcp",
+		Options:        remotemcp.OAuthOptions{Scope: "mcp:connect", ClientName: "Codex"},
+		CredentialKey:  "mcp_access_token",
+		PersistRefresh: true,
 	},
 	"notion-mcp": {
 		CallbackPath:  "/api/remote/notion-mcp/oauth/callback",
